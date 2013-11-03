@@ -1,0 +1,109 @@
+html, body {
+  height: 100%;
+  font-family: source-sans-pro, sans-serif; }
+
+body {
+  margin: 0; }
+
+h1 {
+  margin: 0;
+  line-height: 50px;
+  color: #26bbd2;
+  text-transform: uppercase; }
+
+.app {
+  height: 100%;
+  width: 100%; }
+
+.url-frame, .form-frame, .response-frame {
+  float: left; }
+
+.form, .response {
+  margin-left: 2em;
+  margin-top: 1em; }
+
+.url-frame {
+  background-color: #222222;
+  height: 100%;
+  width: 20%;
+  color: #aaaaaa;
+  box-shadow: 0 0 5px #111111; }
+  .url-frame h1 {
+    margin-left: 0.2em;
+    padding: 0; }
+
+.url-frame__url {
+  background: #333333;
+  width: 100%;
+  cursor: pointer; }
+  .url-frame__url a {
+    color: inherit;
+    margin: 0.5em;
+    width: 100%;
+    display: inline-block; }
+  .url-frame__url a:hover {
+    color: #fafafa; }
+
+.url-frame__url--active {
+  color: #fafafa;
+  margin-left: -0.5em;
+  border-right: 0.5em solid #cc7a6f; }
+  .url-frame__url--active a {
+    margin-left: 1em; }
+
+.form-frame {
+  height: 100%;
+  width: 40%;
+  color: #aaaaaa; }
+
+.response-frame {
+  width: 40%; }
+
+.button {
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 3rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 1px solid #134f7f;
+  background-color: #288edf;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.36);
+  color: white;
+  font-weight: 500;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.36); }
+
+.button:hover {
+  background-color: #4ca1e4; }
+
+.button:active {
+  background-color: #1e7dc8;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.12); }
+
+.text-input {
+  line-height: 3rem;
+  font-size: 1em;
+  letter-spacing: 1px;
+  padding: 0 1.25rem;
+  border: 1px solid #9daca9;
+  background-color: white;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+  color: #454545;
+  vertical-align: top; }
+
+.text-input:focus {
+  background-color: white;
+  color: #454545;
+  border: 1px solid #0036ff;
+  box-shadow: 0 0 0 2px #6fb5f1; }
+
+.text-input:disabled::-webkit-input-placeholder {
+  color: #454545; }
+
+.text-input:disabled::-moz-placeholder {
+  color: #454545; }
+
+.text-input:disabled:-ms-input-placeholder {
+  color: #454545; }
+
+.text-input:invalid {
+  border: 1px solid #ec514e; }

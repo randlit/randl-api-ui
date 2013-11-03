@@ -1,0 +1,8 @@
+{
+  "name": "randl-api",
+  "version": "0.0.1",
+  "main": "index.html",
+  "dependencies": {
+    "react": "~0.5.1"
+  }
+}

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Switch to product root
+cd "$(dirname "$0")"
+cd ..
+
+sass --watch styles/src/app.sass:styles/dist/app.css & \
+node_modules/.bin/jsx --watch scripts/src scripts/dist & \
+foreman start

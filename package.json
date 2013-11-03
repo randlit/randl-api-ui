@@ -1,0 +1,19 @@
+{
+  "name": "randl-api",
+  "version": "0.0.1",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "@jostsg",
+  "license": "MIT",
+  "devDependencies": {
+    "react-tools": "~0.5.1"
+  },
+  "dependencies": {
+    "express": "~3.4.4",
+    "http-proxy": "~0.10.3"
+  }
+}
