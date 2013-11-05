@@ -262,21 +262,54 @@ window.addEventListener ("DOMContentLoaded", function () {
     })
   };
 
+  var Markdown = React.createClass({
+
+    fetch: function () {
+      var _this = this;
+      if (!this.just) {
+        $.get('md/' + this.props.doc).done(function (html) {
+          _this.just = true;
+          _this.setState({html: html}, function () {
+            _this.just = false;
+          });
+        });
+      }
+    },
+
+    getInitialState: function () {
+      this.fetch();
+      return {html: ''};
+    },
+
+    render: function () {
+      this.fetch();
+
+      return (
+        <div className='markdown' dangerouslySetInnerHTML={{
+          __html: this.state.html
+        }}></div>
+      )
+    }
+  });
+
   var FormFrame = React.createClass({
 
     getInitialState: function () {
-      return {form:""};
+      return {form: ''};
     },
 
     render: function () {
 
       var Form = forms[this.state.form];
+      var form = 'None found.';
 
-      var form = "None found.";
       if (Form) form = new Form({onData: this.props.onData});
-      
+
       return (
-        <div className='form'>{form}</div>
+        <div className='form'>
+          <div>{form}</div>
+          <Markdown doc={'randl-write/' + this.state.form} />
+        </div>
       )
     }
   });

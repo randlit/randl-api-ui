@@ -262,21 +262,54 @@ window.addEventListener ("DOMContentLoaded", function () {
     })
   };
 
+  var Markdown = React.createClass({displayName: 'Markdown',
+
+    fetch: function () {
+      var _this = this;
+      if (!this.just) {
+        $.get('md/' + this.props.doc).done(function (html) {
+          _this.just = true;
+          _this.setState({html: html}, function () {
+            _this.just = false;
+          });
+        });
+      }
+    },
+
+    getInitialState: function () {
+      this.fetch();
+      return {html: ''};
+    },
+
+    render: function () {
+      this.fetch();
+
+      return (
+        React.DOM.div( {className:"markdown", dangerouslySetInnerHTML:{
+          __html: this.state.html
+        }})
+      )
+    }
+  });
+
   var FormFrame = React.createClass({displayName: 'FormFrame',
 
     getInitialState: function () {
-      return {form:""};
+      return {form: ''};
     },
 
     render: function () {
 
       var Form = forms[this.state.form];
+      var form = 'None found.';
 
-      var form = "None found.";
       if (Form) form = new Form({onData: this.props.onData});
-      
+
       return (
-        React.DOM.div( {className:"form"}, form)
+        React.DOM.div( {className:"form"}, 
+          React.DOM.div(null, form),
+          Markdown( {doc:'randl-write/' + this.state.form} )
+        )
       )
     }
   });
